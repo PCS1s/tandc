@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Terms and Conditions | SecureTech Inc.</title>
+    <style>
+        :root {
+            --primary: #0056b3;
+            --secondary: #28a745;
+            --danger: #dc3545;
+            --warning: #ffc107;
+            --dark: #343a40;
+            --light: #f8f9fa;
+            --border: #dee2e6;
+            --radius: 8px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+
+        .cyber-header {
+            background-color: white;
+            box-shadow: var(--shadow);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .terms-container {
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .terms-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .terms-title {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .last-updated {
+            color: var(--dark);
+            font-size: 0.9rem;
+        }
+
+        .terms-section {
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            margin: 1rem 0 0.5rem;
+            color: var(--dark);
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        ul, ol {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .prohibited-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .prohibited-icon {
+            color: var(--danger);
+            font-size: 1.1rem;
+            margin-top: 0.2rem;
+        }
+
+        .security-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: var(--light);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 0.5rem 1rem;
+            margin: 0.5rem 0;
+            font-size: 0.9rem;
+        }
+
+        .warning-box {
+            background-color: rgba(220, 53, 69, 0.1);
+            border-left: 4px solid var(--danger);
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0 var(--radius) var(--radius) 0;
+        }
+
+        .warning-title {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--danger);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-info {
+            background-color: rgba(0, 86, 179, 0.1);
+            border-left: 4px solid var(--primary);
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0 var(--radius) var(--radius) 0;
+        }
+
+        .contact-title {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .footer-link:hover {
+            text-decoration: underline;
+        }
+
+        .copyright {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .terms-container {
+                padding: 2rem;
+            }
+            
+            .header-container, 
+            .main-content,
+            .footer-container {
+                padding: 0 1rem;
+            }
+            
+            .terms-title {
+                font-size: 1.75rem;
+            }
+            
+            .section-title {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .terms-container {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+    <script src="//code.jivosite.com/widget/ws6MIj59mG" async></script>
+
+</head>
+<body>
+    <!-- Header -->
+    <header class="cyber-header">
+        <div class="header-container">
+            <a href="https://pcs1s.github.io/PrivateCybersecurityServices/" class="logo">
+                <span class="logo-icon">🔒</span>
+                <span class="logo-text">P.C.S</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="terms-container">
+            <div class="terms-header">
+                <h1 class="terms-title">Terms and Conditions</h1>
+                <p class="last-updated">Last Updated: June 15, 2023</p>
+            </div>
+
+            <div class="terms-section">
+                <h2 class="section-title">1. Acceptance of Terms</h2>
+                <p>By accessing or using the services provided by PersonnalCybersecurityServices Inc. (Our Company), you agree to comply with these <strong>Cybersecurity Terms and Conditions</strong> ("Terms"). If you do not agree to these Terms, you must not use our services.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2 class="section-title">2. User Responsibilities</h2>
+                
+                <h3 class="section-subtitle">2.1 Account Security</h3>
+                <ul>
+                    <li>You are responsible for maintaining the confidentiality of your login credentials (e.g., username, password, multi-factor authentication).</li>
+                    <li>Do not share your credentials with unauthorized parties.</li>
+                    <li>Notify us immediately if you suspect unauthorized access to your account.</li>
+                </ul>
+                
+                <h3 class="section-subtitle">2.2 Secure Practices</h3>
+                <ul>
+                    <li>Use strong passwords (at least 12 characters with upper/lowercase, numbers, and special characters).</li>
+                    <li>Avoid reusing passwords across different services.</li>
+                    <li>Enable multi-factor authentication (MFA) where available.</li>
+                </ul>
+                
+                <h3 class="section-subtitle">2.3 Prohibited Activities</h3>
+                <p>You agree <strong>not</strong> to:</p>
+                <ul>
+                    <li class="prohibited-item">
+                        <span class="prohibited-icon">🚫</span>
+                        <span>Engage in hacking, phishing, or unauthorized data access.</span>
+                    </li>
+                    <li class="prohibited-item">
+                        <span class="prohibited-icon">🚫</span>
+                        <span>Introduce malware, viruses, or malicious scripts into our systems.</span>
+                    </li>
+                    <li class="prohibited-item">
+                        <span class="prohibited-icon">🚫</span>
+                        <span>Conduct security testing without prior written consent ("penetration testing," "vulnerability scanning").</span>
+                    </li>
+                    <li class="prohibited-item">
+                        <span class="prohibited-icon">🚫</span>
+                        <span>Bypass security measures or exploit known vulnerabilities.</span>
+                    </li>
+                    <li class="prohibited-item">
+                        <span class="prohibited-icon">🚫</span>
+                        <span>Use our services for illegal or unauthorized purposes.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="terms-section">
+                <h2 class="section-title">3. Data Protection & Privacy</h2>
+                
+                <h3 class="section-subtitle">3.1 Data Handling</h3>
+                <ul>
+                    <li>We follow industry standards (e.g., <span class="security-badge">GDPR</span>, <span class="security-badge">CCPA</span>, <span class="security-badge">ISO 27001</span>) to protect personal and financial data.</li>
+                    <li>Sensitive data (e.g., credit card info) is encrypted in transit (<span class="security-badge">TLS 1.2+</span>) and at rest (<span class="security-badge">AES-256</span>).</li>
+                </ul>
+                
+                <h3 class="section-subtitle">3.2 Incident Reporting</h3>
+                <p>If you discover a security vulnerability:</p>
+                <ul>
+                    <li><strong>🔍 Responsible Disclosure</strong>: Email <a href="kylebelford@gmail.com">kylebelford@gmail.com</a> with details (proof-of-concept, impact).</li>
+                    <li><strong>⚠️ No Public Disclosure</strong>: Do <strong>not</strong> share vulnerabilities publicly before we resolve them.</li>
+                </ul>
+            </div>
+
+            <div class="terms-section">
+                <h2 class="section-title">4. Monitoring & Enforcement</h2>
+                
+                <h3 class="section-subtitle">4.1 Logging & Audits</h3>
+                <ul>
+                    <li>We monitor systems for suspicious activity (e.g., failed login attempts, DDoS attacks).</li>
+                    <li>Unauthorized access attempts may result in <strong>account termination</strong> or <strong>legal action</strong>.</li>
+                </ul>
+                
+                <h3 class="section-subtitle">4.2 Compliance with Law</h3>
+                <ul>
+                    <li>We cooperate with law enforcement for cybercrime investigations.</li>
+                    <li>We reserve the right to suspend accounts violating these Terms.</li>
+                </ul>
+            </div>
+
+            <div class="terms-section">
+                <h2 class="section-title">5. Liability & Disclaimers</h2>
+                
+                <div class="warning-box">
+                    <p class="warning-title">
+                        <span>⚠️</span>
+                        <span>No Guarantee of Absolute Security</span>
+                    </p>
+                    <p>While we implement safeguards (firewalls, encryption, audits), no system is 100% breach-proof. You use our services <strong>at your own risk</strong>.</p>
+                </div>
+                
+                <p><strong>Limitation of Liability:</strong> We are <strong>not liable</strong> for:</p>
+                <ul>
+                    <li>Damages from cyberattacks beyond our control (e.g., zero-day exploits).</li>
+                    <li>User negligence (e.g., weak passwords, falling for phishing).</li>
+                </ul>
+            </div>
+
+            <div class="terms-section">
+                <h2 class="section-title">6. Updates to These Terms</h2>
+                <p>We may update these Terms periodically. Check the <strong>"Last Updated"</strong> date for changes. Continued use of our services means you accept the revised Terms.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2 class="section-title">7. Contact Us</h2>
+                <div class="contact-info">
+                    <p class="contact-title">
+                        <span>📧</span>
+                        <span>For security concerns, report to:</span>
+                    </p>
+                    <p><a href="kylebelford@gmail.com">security@securetech.com</a></p>
+                    <p><a href="kylebelford@gmail.com" target="_blank">Our Vulnerability Disclosure Program</a></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="#" class="footer-link">Privacy Policy</a>
+                <a href="#" class="footer-link">Security Center</a>
+                <a href="#" class="footer-link">Terms of Service</a>
+                <a href="#" class="footer-link">Contact</a>
+                <a href="#" class="footer-link">Careers</a>
+            </div>
+            <p class="copyright">© 2023 SecureTech Inc. All rights reserved. Member FDIC. Equal Housing Lender.</p>
+        </div>
+    </footer>
+</body>
+</html>
